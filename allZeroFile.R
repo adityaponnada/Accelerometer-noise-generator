@@ -6,7 +6,6 @@ n = 144000
 
 matrix1 <- as.data.frame(matrix(0, ncol = 3, nrow = n))
 
-
 names(matrix1) <- c("X_ACCELERATION_METERS_PER_SECOND_SQUARED", "Y_ACCELERATION_METERS_PER_SECOND_SQUARED", "Z_ACCELERATION_METERS_PER_SECOND_SQUARED")
 
 newStartTime <- as.POSIXct("2017-11-10 15:00:00.000")
