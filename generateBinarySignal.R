@@ -11,15 +11,15 @@ names(matrix1) <- c("X_ACCELERATION_METERS_PER_SECOND_SQUARED", "Y_ACCELERATION_
                     "Z_ACCELERATION_METERS_PER_SECOND_SQUARED")
 
 
-matrix1$Z_ACCELERATION_METERS_PER_SECOND_SQUARED <- 0.5
+#matrix1$Z_ACCELERATION_METERS_PER_SECOND_SQUARED <- 0.5
 
 matrix2 <- as.data.frame(matrix(0.5, ncol = 3, nrow = n))
 
 names(matrix2) <- c("X_ACCELERATION_METERS_PER_SECOND_SQUARED", "Y_ACCELERATION_METERS_PER_SECOND_SQUARED", 
                     "Z_ACCELERATION_METERS_PER_SECOND_SQUARED")
 
-matrix2$Y_ACCELERATION_METERS_PER_SECOND_SQUARED <- -0.5
-matrix2$Z_ACCELERATION_METERS_PER_SECOND_SQUARED <- 0
+#matrix2$Y_ACCELERATION_METERS_PER_SECOND_SQUARED <- -0.5
+#matrix2$Z_ACCELERATION_METERS_PER_SECOND_SQUARED <- 0
 
 
 threshold0 = 160
@@ -112,8 +112,10 @@ tempPlot <- plot_ly(binaryMixed, x = ~HEADER_TIME_STAMP, y = ~X_ACCELERATION_MET
 
 
 
-savePath = "C:/Users/Dharam/Downloads/MDCAS Files/SIMULATED_DATA/ABNORMAL/BINARY2.csv"
+savePath = "C:/Users/Dharam/Downloads/MDCAS Files/SIMULATED_DATA/ABNORMAL/BINARY.csv"
 
-write.csv(matrix1, file = savePath, sep = ",", row.names = FALSE)
+binaryMixed <- head(binaryMixed, 96000)
+
+write.csv(binaryMixed, file = savePath, sep = ",", row.names = FALSE)
 
 
